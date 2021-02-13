@@ -1,7 +1,7 @@
 import asyncHandler from "express-async-handler";
 import { genrateToken } from "../utils/genrateToken.js";
 import User from "../models/userModel.js";
-import { sendWelcomeEmail } from "../utils/emails.js";
+// import { sendWelcomeEmail } from "../utils/emails.js";
 // @desc    Auth the user & get token
 // @route   POST  /api/users/login
 // @access    public
@@ -36,7 +36,7 @@ const signupUser = asyncHandler(async (req, res) => {
     throw new Error("User already exist!");
   }
   const user = await User.create({ name, email, password });
-  sendWelcomeEmail(user.email, user.name);
+  // sendWelcomeEmail(user.email, user.name);
 
   if (user) {
     res.status(201).json({
