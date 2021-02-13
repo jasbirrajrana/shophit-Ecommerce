@@ -9,9 +9,9 @@
   },
   "scripts": {
     "start": "node backend/server",
-    "build": "cd frontend && npm run build",
+    "build": "cd frontend && yarn run build",
     "install-frontend": "cd frontend && yarn install",
-    "heroku-postbuild": "npm run install-frontend && npm run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn run install-frontend && yarn run build",
     "server": "nodemon backend/server",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d"
