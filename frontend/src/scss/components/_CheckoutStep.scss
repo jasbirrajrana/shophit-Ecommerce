@@ -1,0 +1,24 @@
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > p {
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: green;
+    border-radius: 2px;
+  }
+}
+
+.stepper-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.055);
+}
+
+.step-nav-item {
+}

@@ -1,0 +1,36 @@
+{
+  "name": "shop-hit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": "14.6.0"
+  },
+  "scripts": {
+    "start": "node backend/server",
+    "build": "cd frontend && npm run build",
+    "install-frontend": "cd frontend && yarn install",
+    "heroku-postbuild": "npm run install-frontend && npm run build",
+    "server": "nodemon backend/server",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.2",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mailgun-js": "^0.22.0",
+    "mongoose": "^5.11.14",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "node-sass": "4.14.1",
+    "nodemon": "^2.0.7",
+    "validator": "^13.5.2"
+  }
+}

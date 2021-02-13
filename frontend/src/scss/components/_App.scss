@@ -1,0 +1,115 @@
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  &:hover {
+    background: rgb(133, 131, 131);
+    transition: all 0.3s ease-in-out;
+  }
+  background: #aaa;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #aaa;
+}
+main {
+  min-height: 70vh;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.price {
+  padding: 1rem 0;
+}
+.navbar-brand {
+  & > img {
+    object-fit: contain;
+    height: 3rem;
+  }
+}
+
+.rating {
+  & > span {
+    :not(:last-child) {
+      margin: 0.1rem;
+    }
+    & > i {
+      color: #ffc107;
+    }
+  }
+}
+
+.counter {
+  margin-top: 1rem;
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.counter-items {
+  display: flex;
+}
+.count {
+  padding: 0.7rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 1.4rem;
+  padding: 0.4rem 0;
+}
+.navbat-nav {
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.cart-icon {
+  display: flex;
+  position: relative;
+}
+.have-items {
+  position: absolute;
+  margin-left: 1.3rem;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: #ffc107;
+}
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: flex;
+}
+.carousel img {
+}
+
+.carousel a {
+  margin: 0 auto;
+}
+
+.invalid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(252, 0, 0, 0.25);
+}
+
+.valid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(29, 252, 0, 0.25);
+}
