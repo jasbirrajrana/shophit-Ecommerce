@@ -1,6 +1,6 @@
 ## ShopHit ECommerce
 
-<!-- ![Home](example-images/1.png) -->
+<img src="./media/screenshot.png" alt="website-screenshot"/>
 
 ### Live preview
 
