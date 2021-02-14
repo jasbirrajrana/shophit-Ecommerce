@@ -27,9 +27,8 @@ $ npm install
 3. Run the project
 
 ```sh
-$ npm run dev
+$ yarn server
 
-# or to build
 
-$ npm run build
+$ cd frontend and then yarn start
 ```
