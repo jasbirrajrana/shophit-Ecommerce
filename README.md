@@ -11,7 +11,7 @@ Click [here](https://shophit.herokuapp.com/) to see a live preview.
 1. Clone the project
 
 ```sh
-$ git clone https://github.com/jamstack-cms/jamstack-ecommerce.git
+$ git clone https://github.com/jasbirrajrana/shophit-Ecommerce.git
 ```
 
 2. Install the dependencies:
