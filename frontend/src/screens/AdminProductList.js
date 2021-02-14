@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment";
 import { Table, Button, Row, Col } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
@@ -53,7 +53,8 @@ const AdminProductList = ({ history, match }) => {
       dispatch(listProducts());
     }
   }, [dispatch, history, userInfo, product, successCreate, successDelete]);
-  const deleteHandler = (id) => {
+
+  const deleteHandler = (id, e) => {
     if (window.confirm("are you sure?")) {
       //dispatch delete products
       dispatch(deleteProduct(id));
@@ -64,6 +65,7 @@ const AdminProductList = ({ history, match }) => {
     // dispatch create product
     dispatch(createProduct());
   };
+
   return (
     <>
       <Row className="align-items-center">

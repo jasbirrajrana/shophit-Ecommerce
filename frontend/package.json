@@ -59,6 +59,8 @@
     "react-app-polyfill": "^2.0.0",
     "react-bootstrap": "^1.4.3",
     "react-bootstrap-country-select": "^0.7.12",
+    "react-confirm-alert": "^2.7.0",
+    "react-confirm-bootstrap": "^5.3.1",
     "react-country-region-selector": "^3.0.2",
     "react-dev-utils": "^11.0.1",
     "react-dom": "^17.0.1",

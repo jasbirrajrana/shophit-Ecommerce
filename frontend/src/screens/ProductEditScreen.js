@@ -1,7 +1,8 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import { Link } from "react-router-dom";
-import { Form, Button, Row } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -20,6 +21,9 @@ const ProductEditScreen = ({ match, history }) => {
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
   const [uploading, setUploading] = useState(false);
+
+  const [imageName, setImageName] = useState("");
+  const [imageError, setImageError] = useState("");
 
   const dispatch = useDispatch();
 
@@ -54,6 +58,13 @@ const ProductEditScreen = ({ match, history }) => {
 
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0];
+    const patt = new RegExp(/jpg|jpeg|png/);
+    setImageName(String(e.target.files[0].name));
+    if (!patt.test(e.target.files[0].name.split(".").pop())) {
+      setImageError("Invalid image! only allowed jpg, jpeg, png");
+    } else {
+      setImageError("");
+    }
     const formData = new FormData();
     formData.append("image", file);
     setUploading(true);
@@ -126,23 +137,14 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId="image">
-              <Form.Label>Image</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter image url"
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-              ></Form.Control>
-              Or
-              <Form.File
-                id="image-file"
-                label="Choose File"
-                custom
-                onChange={uploadFileHandler}
-              ></Form.File>
-              {uploading && <Loader />}
-            </Form.Group>
+            <Form.File
+              id="image-file"
+              label={imageName ? imageName : "Choose file"}
+              custom
+              onChange={uploadFileHandler}
+            ></Form.File>
+            {uploading && <Loader />}
+            {imageError && <p style={{ color: "red" }}>{imageError}</p>}
 
             <Form.Group controlId="brand">
               <Form.Label>Brand</Form.Label>
@@ -184,7 +186,11 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Button type="submit" variant="primary">
+            <Button
+              type="submit"
+              variant="warning"
+              disabled={imageError ? true : false}
+            >
               Update
             </Button>
           </Form>
