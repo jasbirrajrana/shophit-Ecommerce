@@ -5,6 +5,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Swal from "sweetalert2";
 import { listUsers, deleteUser } from "../actions/usersAction";
 
 const UserListScreen = ({ history }) => {
@@ -29,7 +30,18 @@ const UserListScreen = ({ history }) => {
     }
   }, [dispatch, history, userInfo, successDelete]);
   const deleteHandler = (id) => {
-    dispatch(deleteUser(id));
+    Swal.fire({
+      title: "Are you sure that you want to delete this user?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(deleteUser(id));
+      }
+    });
   };
   return (
     <>

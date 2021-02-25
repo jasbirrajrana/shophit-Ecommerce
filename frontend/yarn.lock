@@ -1609,6 +1609,11 @@
     "@svgr/plugin-svgo" "^5.4.0"
     loader-utils "^2.0.0"
 
+"@sweetalert2/theme-bootstrap-4@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-bootstrap-4/-/theme-bootstrap-4-4.0.3.tgz#7a9e7a99f5ecfb353e4ba9a16de918736162370c"
+  integrity sha512-jP8cpQy4cGjlGPkEK8KF/owF00BRz5vvEdi5VrpTsiMjdkte85a1EZ/azPsX9HQrMAZ2qAmIsleV8UDcl8R2YQ==
+
 "@testing-library/dom@^7.28.1":
   version "7.29.4"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.29.4.tgz#1647c2b478789621ead7a50614ad81ab5ae5b86c"
@@ -9624,11 +9629,6 @@ react-bootstrap@^1.4.3:
     uncontrollable "^7.0.0"
     warning "^4.0.3"
 
-react-confirm-alert@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/react-confirm-alert/-/react-confirm-alert-2.7.0.tgz#7cdbf2e052e03554ac6a7d8956c9c227010c8a53"
-  integrity sha512-21NWtGK/e85+ZX3TLRpMc3IsU5Kj6Z9ElCOrkTIlwMzV9EancyXNlkqHGbtKP63a2iS6g5hOxROokmJOqKQiXA==
-
 react-confirm-bootstrap@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/react-confirm-bootstrap/-/react-confirm-bootstrap-5.3.1.tgz#7c42f32a91874ca93d22e94a0b675a4806c90f6b"
@@ -11261,6 +11261,11 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sweetalert2@^10.15.5:
+  version "10.15.5"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-10.15.5.tgz#cca272fdb44c0f3eef3e074ebed4965e9baf118f"
+  integrity sha512-zHZqVpsEyfBVy/O25D7RMYyh+/h0jbmHXGK9DWEDnkPvsl4JlMueJRSEidAFS+mtYDLI8fFkGKltgHRvDPRV1g==
 
 symbol-observable@^1.2.0:
   version "1.2.0"

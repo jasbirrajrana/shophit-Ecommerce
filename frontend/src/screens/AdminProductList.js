@@ -3,6 +3,8 @@ import moment from "moment";
 import { Table, Button, Row, Col } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
+
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import {
@@ -54,11 +56,19 @@ const AdminProductList = ({ history, match }) => {
     }
   }, [dispatch, history, userInfo, product, successCreate, successDelete]);
 
-  const deleteHandler = (id, e) => {
-    if (window.confirm("are you sure?")) {
-      //dispatch delete products
+  const deleteHandler = (id) => {
+    Swal.fire({
+      title: "Are you sure that you want to delete this product?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete!",
+    }).then((result) => {
+      if (result.isConfirmed) {
       dispatch(deleteProduct(id));
-    }
+      }
+    });
   };
 
   const createProductHandler = () => {
